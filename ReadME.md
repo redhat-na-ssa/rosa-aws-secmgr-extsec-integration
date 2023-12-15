@@ -85,10 +85,11 @@ create `trust-policy.json`. Sample file is provided in the repo Replace OIDC_END
 
     The config pod takes care of synchorizing the externalsecret and secretstore resources with the provider.so we assume IAM role for the pod. Inorder the assume this IAM role we annotate the service account with the $ROLE_ARN. The service account this annotation is required is `externalsecret-operator-config-external-secrets`  
 
-### Verify AWS injection is successfull by following commands:
+### Verify AWS injection is successful by following commands:
 
 ```
     oc get sa externalsecret-operator-config-external-secrets -o yaml -n secret-manager | grep eks
+
     oc describe pod externalsecret-operator-config-external-secrets-59bf6bc47d4b7vv -n secret-manager | grep AWS_ROLE_ARN
 ```
 
