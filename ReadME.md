@@ -101,3 +101,8 @@ The above command should display values of ROLE_ARN
 1) Create actual project namespace `oc new-project php-demo`
 2) Create SecretStore Custom Resource. This resource configures the provider to where it has to fetched from. see  `secret-store.yaml`. perform `oc apply -k secret-store.yaml`
 3) Create ExternalSecret Custom Resource. This connect the secretstore and the actual secret to be created in openshift. please refer `external-secret.yaml`. replace the required values and perform `oc apply external-secret.yaml`
+
+# References 
+
+https://external-secrets.io/v0.5.1/provider-aws-secrets-manager/
+https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html
